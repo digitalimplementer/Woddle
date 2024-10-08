@@ -18,6 +18,15 @@ function App(): React.JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        <Image
+          style={{
+            position: 'absolute',
+            top: -45,
+            left: 0,
+            opacity: 0.3,
+          }}
+          source={require('./assets/design1.png')}
+        />
         <View style={styles.header}>
           <Text style={styles.logo}>Woddle</Text>
           <View style={styles.headerButtons}>
@@ -165,6 +174,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     paddingHorizontal: 20,
     paddingBottom: 30,
+    gap: 19,
   },
   header: {
     flexDirection: 'row',
@@ -172,6 +182,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingTop: 10,
+    marginBottom: 10,
   },
   logo: {
     fontSize: 40,
@@ -188,14 +199,12 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   profileIcon: {
-    width: 35,
-    height: 35,
+    width: 30,
+    height: 30,
     borderRadius: 20,
   },
   babyInfoContainer: {
     alignItems: 'center',
-    marginVertical: 20,
-    backgroundColor: 'blue',
     borderRadius: 23,
     overflow: 'hidden',
     height: 223,
@@ -206,8 +215,10 @@ const styles = StyleSheet.create({
     top: 11,
     backgroundColor: '#F3F7FAB2',
     borderRadius: 23,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingLeft: 20,
+    paddingRight: 21,
+    paddingTop: 7,
+    paddingBottom: 9,
     flexDirection: 'row',
     gap: 15,
     alignItems: 'baseline',
@@ -219,7 +230,8 @@ const styles = StyleSheet.create({
   },
   babyInfoText: {
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: -0.5,
     fontFamily: 'Cabin',
     color: '#363636',
     marginBottom: 3,
@@ -286,16 +298,13 @@ const styles = StyleSheet.create({
     marginTop: 'auto',
     fontFamily: 'Roboto-Light',
   },
-  adContainer: {
-    marginVertical: 20,
-  },
+  adContainer: {},
   adImage: {
     width: '100%',
     height: 73,
     borderRadius: 15,
   },
   milestoneContainer: {
-    marginBottom: 20,
     borderColor: '#000000',
     borderWidth: 1,
     borderRadius: 20,
@@ -308,7 +317,11 @@ const styles = StyleSheet.create({
   milestoneCardContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 24,
+    alignItems: 'flex-end',
+    paddingLeft: 24,
+    paddingRight: 23,
+    paddingTop: 15,
+    paddingBottom: 21,
   },
   milestoneTextContainer: {
     gap: 11,
