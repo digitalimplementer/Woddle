@@ -23,7 +23,7 @@ function App(): React.JSX.Element {
             position: 'absolute',
             top: -45,
             left: 0,
-            opacity: 0.3,
+            opacity: 0,
           }}
           source={require('./assets/design1.png')}
         />
@@ -33,12 +33,14 @@ function App(): React.JSX.Element {
             <VectorImage
               source={require('./assets/icons/inbox.svg')}
               style={styles.inboxIcon}
+              accessibilityLabel="inbox"
             />
             <TouchableOpacity>
               {/* TODO: Replace with user profile image from backend */}
               <Image
                 source={require('./assets/pictures/profilePic.png')}
                 style={styles.profileIcon}
+                accessibilityLabel="profile picture"
               />
             </TouchableOpacity>
           </View>
@@ -49,6 +51,7 @@ function App(): React.JSX.Element {
             <Image
               source={require('./assets/pictures/baby.png')}
               style={styles.babyImage}
+              accessibilityLabel="baby image"
             />
             <View style={styles.babyInfoCard}>
               <View style={styles.babyInfoCardText}>
@@ -58,13 +61,14 @@ function App(): React.JSX.Element {
               <VectorImage
                 source={require('./assets/icons/male.svg')}
                 style={styles.smallIcon}
+                accessibilityLabel="gender male"
               />
             </View>
           </View>
           <View style={styles.cardsContainer}>
             <View style={{...styles.card, ...styles.card1}}>
               <Text style={styles.cardTitle}>Weight</Text>
-              <Text style={styles.cardData}>
+              <Text style={styles.cardData} numberOfLines={2}>
                 15<Text style={styles.cardDataSpan}> lbs</Text>
                 {'\n'}3<Text style={styles.cardDataSpan}> oz</Text>
               </Text>
@@ -73,13 +77,15 @@ function App(): React.JSX.Element {
 
             <View style={{...styles.card, ...styles.card2}}>
               <Text style={styles.cardTitle}>Diaper</Text>
-              <Text style={styles.cardData}>Pee Medium</Text>
+              <Text style={styles.cardData} numberOfLines={2}>
+                Pee Medium
+              </Text>
               <Text style={styles.cardTime}>2h 55m ago</Text>
             </View>
 
             <View style={{...styles.card, ...styles.card3}}>
               <Text style={styles.cardTitle}>Feeding</Text>
-              <Text style={styles.cardData}>
+              <Text style={styles.cardData} numberOfLines={2}>
                 Formula 5<Text style={styles.cardDataSpan}>oz</Text>
               </Text>
               <Text style={styles.cardTime}>2h 30m ago</Text>
@@ -87,7 +93,7 @@ function App(): React.JSX.Element {
 
             <View style={{...styles.card, ...styles.card4}}>
               <Text style={styles.cardTitle}>Sleep</Text>
-              <Text style={styles.cardData}>
+              <Text style={styles.cardData} numberOfLines={2}>
                 2<Text style={styles.cardDataSpan}>h</Text> 20
                 <Text style={styles.cardDataSpan}>m</Text>
               </Text>
@@ -99,12 +105,14 @@ function App(): React.JSX.Element {
             <Image
               source={require('./assets/pictures/add.png')}
               style={styles.adImage}
+              accessibilityLabel="add image"
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.milestoneContainer}>
             <Image
               source={require('./assets/pictures/milestone.png')}
               style={styles.milestoneImage}
+              accessibilityLabel="milestone image"
             />
             <View style={styles.milestoneCardContainer}>
               <View style={styles.milestoneTextContainer}>
@@ -115,6 +123,7 @@ function App(): React.JSX.Element {
                 <VectorImage
                   source={require('./assets/icons/arrowCircleLeft.svg')}
                   style={styles.defaultIcon}
+                  accessibilityLabel="open more milestones"
                 />
               </View>
             </View>
@@ -127,6 +136,7 @@ function App(): React.JSX.Element {
           <VectorImage
             source={require('./assets/icons/home.svg')}
             style={styles.defaultIcon}
+            accessibilityLabel="home"
           />
           <Text style={styles.menuText}>Home</Text>
         </TouchableOpacity>
@@ -135,6 +145,7 @@ function App(): React.JSX.Element {
             <VectorImage
               source={require('./assets/icons/mainButton.svg')}
               style={styles.mainIcon}
+              accessibilityLabel="main menu"
             />
           </View>
         </TouchableOpacity>
@@ -142,6 +153,7 @@ function App(): React.JSX.Element {
           <VectorImage
             source={require('./assets/icons/more.svg')}
             style={styles.defaultIcon}
+            accessibilityLabel="see more"
           />
           <Text style={styles.menuText}>More</Text>
         </TouchableOpacity>
@@ -226,7 +238,7 @@ const styles = StyleSheet.create({
   babyInfoCardText: {},
   babyImage: {
     width: '100%',
-    height: '100%',
+    resizeMode: 'cover',
   },
   babyInfoText: {
     fontSize: 14,
